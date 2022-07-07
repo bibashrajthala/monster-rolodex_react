@@ -1,6 +1,8 @@
 import { Component } from "react";
 import "./App.css";
 
+import CardList from "./components/card-list/card-list.component";
+
 class App extends Component {
   constructor() {
     super();
@@ -26,7 +28,7 @@ class App extends Component {
   }
 
   onSearchChange = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     const searchField = event.target.value.toLowerCase();
 
     this.setState(() => {
@@ -49,7 +51,7 @@ class App extends Component {
           placeholder="Search Monster"
           onChange={onSearchChange}
         />
-
+        <CardList />
         {filteredMonsters.map((monster, index) => {
           return <h1 key={index}>{monster.name}</h1>;
         })}
