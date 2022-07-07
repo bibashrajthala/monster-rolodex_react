@@ -5,18 +5,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: "Yihua",
+      name: { firstName: "Bibash", lastName: "Rajthala" },
+      company: "ZTM",
     };
   }
 
   render() {
     return (
       <div className="App">
-        <h1>hi {this.state.name}</h1>
+        <h1>
+          hi i am {this.state.name.firstName} {this.state.name.lastName}
+        </h1>
+        <p>i work in {this.state.company}</p>
         <button
           onClick={() => {
-            // this.state.name = "Bibash";
-            this.setState({ name: "Andrei" });
+            // this.setState({ name: "Ram" });
+            this.setState({ name: { firstName: "Ram", lastName: "Katwal" } });
             console.log(this.state);
           }}
         >
