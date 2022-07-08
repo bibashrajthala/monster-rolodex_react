@@ -5,13 +5,17 @@ import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
 
 const App = () => {
+  console.log("render");
   const [searchField, setSearchField] = useState("");
   console.log(searchField);
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
 
-    setSearchField(searchFieldString); // searchField = searchFieldString
+    // setSearchField(searchFieldString); // searchField = searchFieldString
+    // setSearchField(2); // searchField = 2
+    // setSearchField(searchField); // searchField = searchField ie, this state's value never changes
+    // setSearchField(searchFieldString);
   };
   return (
     <div className="App">
